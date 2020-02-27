@@ -26,6 +26,8 @@ apps:
   hass:
     command: hass
     daemon: simple
+  ha:
+    command: ha
 
 parts:
   homeassistant:
@@ -36,3 +38,5 @@ parts:
       - python3-dev
       - libffi-dev
       - libssl-dev
+    requirements:
+      - requirements_all.txt
