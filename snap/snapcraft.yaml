@@ -38,5 +38,22 @@ parts:
       - python3-dev
       - libffi-dev
       - libssl-dev
+      - build-essential
+      - autoconf
+      - python-pyrex
+      - pkg-config
+      - libudev-dev
+      - libopenzwave1.5-dev
+      - libglib2.0-dev
+      - libavformat-dev
+      - libavcodec-dev
+      - libavdevice-dev
+      - libavutil-dev
+      - libavfilter-dev
+      - libswscale-dev
+      - libswresample-dev
+      - cython3
     requirements:
       - requirements_all.txt
+    constraints:
+      - homeassistant/package_constraints.txt
