@@ -1,4 +1,4 @@
-name: homeassistant-freyes
+name: home-assistant-freyes
 base: core20 # the base snap is the execution environment for this snap
 version: '0.109.3'
 summary: Open-source home automation platform
