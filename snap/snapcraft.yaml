@@ -19,8 +19,8 @@ description: |
   <https://home-assistant.io/help/>`__ of our website for further help and
   information.
 
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+adopt-info: core
+confinement: strict
 
 apps:
   hass:
@@ -57,6 +57,12 @@ parts:
       - libswscale-dev
       - libswresample-dev
       - cython3
+    override-pull: |
+      snapcraftctl pull
+        version="$(git describe --tags --always --dirty)"
+        [ -n "$(echo $version | grep '-')" ] && grade=devel || grade=stable
+        snapcraftctl set-version "$version"
+        snapcraftctl set-grade "$grade"
     requirements:
       - /root/project/snap/local/local_requirements.txt
       - requirements_all.txt
