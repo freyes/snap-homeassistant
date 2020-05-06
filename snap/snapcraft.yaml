@@ -1,6 +1,6 @@
 name: homeassistant-freyes
 base: core20 # the base snap is the execution environment for this snap
-version: git
+version: '0.109.3'
 summary: Open-source home automation platform
 description: |
   Home Assistant is able to track and control all devices at home and offer a
