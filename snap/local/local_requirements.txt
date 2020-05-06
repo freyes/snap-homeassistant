@@ -1,0 +1,5 @@
+# this allows us to use the included typing in python3.8
+# since typing from pypi breaks python3.8 and according
+# to the maintainer won't get any more updates since it
+# was meant to be used for python<3.5
+-e git+https://github.com/freyes/fake_typing.git#egg=typing
