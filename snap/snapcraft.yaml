@@ -31,9 +31,9 @@ apps:
       - network-bind
 
 parts:
-  homeassistant:
+  core:
     plugin: python
-    source: https://github.com/home-assistant/home-assistant.git
+    source: https://github.com/home-assistant/core.git
     source-tag: 0.109.3
     build-packages:
       - python3-dev
