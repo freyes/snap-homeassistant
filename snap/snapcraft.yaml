@@ -64,8 +64,8 @@ parts:
         snapcraftctl set-version "$version"
         snapcraftctl set-grade "$grade"
     requirements:
-      - /root/project/snap/local/local_requirements.txt
+      - $SNAPCRAFT_PROJECT_DIR/snap/local/local_requirements.txt
       - requirements_all.txt
     constraints:
       - homeassistant/package_constraints.txt
-      - /root/project/snap/local/local_constraints.txt
+      - $SNAPCRAFT_PROJECT_DIR/snap/local/local_constraints.txt
