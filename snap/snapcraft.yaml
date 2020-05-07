@@ -57,6 +57,19 @@ parts:
       - libswscale-dev
       - libswresample-dev
       - cython3
+      # lxml python binary package not available, this is needed to compile it from sources
+      - libxml2-dev
+      - libxslt1-dev
+      - cmake  # needed to compile uamqp
+      # needed to compile Pillow
+      - libjpeg-dev
+      - libfreetype6-dev
+      - zlib1g-dev
+      - liblcms2-dev
+      - libtiff5-dev
+      - libwebp-dev
+      - libraqm-dev
+      - libimagequant-dev
     override-pull: |
       snapcraftctl pull
         version="$(git describe --tags --always --dirty)"
