@@ -76,6 +76,9 @@ parts:
         [ -n "$(echo $version | grep '-')" ] && grade=devel || grade=stable
         snapcraftctl set-version "$version"
         snapcraftctl set-grade "$grade"
+    override-build: |
+      python3 -m pip install wheel
+      snapcraftctl build
     requirements:
       - $SNAPCRAFT_PROJECT_DIR/snap/local/local_requirements.txt
       - requirements_all.txt
