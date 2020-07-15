@@ -1,6 +1,5 @@
 name: home-assistant-freyes
 base: core20 # the base snap is the execution environment for this snap
-version: '0.112.3'
 summary: Open-source home automation platform
 description: |
   Home Assistant is able to track and control all devices at home and offer a
@@ -29,12 +28,13 @@ apps:
     plugs:
       - network
       - network-bind
+      - raw-usb  # to read from zwave sticks
 
 parts:
   core:
     plugin: python
     source: https://github.com/home-assistant/core.git
-    source-tag: ${SNAPCRAFT_PROJECT_VERSION}
+    source-tag: '0.112.3'
     build-packages:
       - python3-dev
       - python3-pip
@@ -44,7 +44,6 @@ parts:
       - libssl-dev
       - build-essential
       - autoconf
-      - python-pyrex
       - pkg-config
       - libudev-dev
       - libopenzwave1.5-dev
@@ -70,6 +69,31 @@ parts:
       - libwebp-dev
       - libraqm-dev
       - libimagequant-dev
+    stage-packages:
+      - libffi7
+      - libssl1.1
+      - libudev1
+      - libopenzwave1.5
+      - libglib2.0-0
+      - libavformat58
+      - libavcodec58
+      - libavdevice58
+      - libavutil56
+      - libavfilter7
+      - libswscale5
+      - libswresample3
+      # lxml python binary package not available, this is needed to compile it from sources
+      - libxml2
+      - libxslt1.1
+      # needed for Pillow
+      - libjpeg8
+      - libfreetype6
+      - zlib1g
+      - liblcms2-2
+      - libtiff5
+      - libwebp6
+      - libraqm0
+      - libimagequant0
     override-pull: |
       snapcraftctl pull
         version="$(git describe --tags --always --dirty)"
