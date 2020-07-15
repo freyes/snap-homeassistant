@@ -77,7 +77,8 @@ parts:
         snapcraftctl set-version "$version"
         snapcraftctl set-grade "$grade"
     override-build: |
-      python3 -m pip install wheel
+      python3 -m venv $SNAPCRAFT_PART_INSTALL
+      $SNAPCRAFT_PART_INSTALL/bin/python3 -m pip install wheel
       snapcraftctl build
     requirements:
       - $SNAPCRAFT_PROJECT_DIR/snap/local/local_requirements.txt
