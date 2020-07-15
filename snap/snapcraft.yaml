@@ -96,6 +96,7 @@ parts:
       - libimagequant0
       - freeglut3
       - libglu1-mesa
+      - ffmpeg
     override-pull: |
       snapcraftctl pull
         version="$(git describe --tags --always --dirty)"
