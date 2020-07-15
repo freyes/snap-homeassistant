@@ -94,6 +94,8 @@ parts:
       - libwebp6
       - libraqm0
       - libimagequant0
+      - freeglut3
+      - libglu1-mesa
     override-pull: |
       snapcraftctl pull
         version="$(git describe --tags --always --dirty)"
