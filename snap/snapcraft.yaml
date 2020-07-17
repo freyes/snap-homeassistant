@@ -29,6 +29,10 @@ apps:
       - network-bind
       - raw-usb  # to read from zwave sticks
 
+layout:
+  /etc/openzwave:
+    bind: $SNAP/etc/openzwave
+
 parts:
   core:
     plugin: python
