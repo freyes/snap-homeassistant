@@ -24,7 +24,6 @@ confinement: strict
 apps:
   hass:
     command: bin/hass
-    daemon: simple
     plugs:
       - network
       - network-bind
